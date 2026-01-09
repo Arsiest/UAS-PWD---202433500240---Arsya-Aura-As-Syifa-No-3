@@ -79,13 +79,11 @@
 
     <script>
         function hitungGaji() {
-            // Ambil input dari user
             let inputGaji = document.getElementById('gajiPokok').value;
             let inputLembur = document.getElementById('jamLembur').value;
 
-            // Validasi: kalau input kosong, kasih peringatan
             if (inputGaji == "" || inputLembur == "") {
-                alert("Sha, isi dulu datanya ya!");
+                alert(" silahkan di isi dulu datanya :D");
                 return;
             }
 
@@ -98,7 +96,6 @@
             // Hitung gaji kotor
             let gajiKotor = gajiPokok + totalLembur;
 
-            // Hitung pajak pakai if-else
             let pajak = 0;
             if (gajiKotor < 5000000) {
                 pajak = 0.05 * gajiKotor;
@@ -108,11 +105,8 @@
                 pajak = 0.15 * gajiKotor;
             }
 
-            // Hitung gaji bersih
             let gajiBersih = gajiKotor - pajak;
 
-            // Masukkan hasil ke kolom output sebelah kanan
-            // .toLocaleString('id-ID') supaya formatnya pakai titik (Rp 5.000.000)
             document.getElementById('displayOutput').innerHTML = 
                 "Gaji Pokok: Rp " + gajiPokok.toLocaleString('id-ID') + "<br>" +
                 "Total Gaji Lembur: Rp " + totalLembur.toLocaleString('id-ID') + "<br>" +
@@ -123,4 +117,5 @@
     </script>
 
 </body>
+
 </html>
